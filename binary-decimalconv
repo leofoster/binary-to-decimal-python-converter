@@ -1,0 +1,65 @@
+###LEO Foster  Binary converter
+class binary():
+    #list of numbers
+    numlist = []
+    #times its gone through the iterartions
+    numtime = 0
+    numlist2 = []
+    def conv(num):
+        b = str(num)
+        a = list(b)
+        #whille the number of iterations is smaller than the length of the bianr num
+        while binary.numtime < len(a):
+            print(num)
+            #ads one to the number of itaerations
+            binary.numtime += 1
+            print('numtime remember not -1' + str(binary.numtime))
+            #waht number it is counting from the front
+            number = a[len(str(num)) - binary.numtime]
+            # int ifies it
+            number = int(number)
+            print('number'+str(number))
+            #this is like for binary number * (2 ** this number bintime so the number along that the binary numbber is)
+            bintime = binary.numtime -1
+            ##does the formula as statedd above
+            out = (2 ** bintime)
+            numreal = number * out
+            ##end of formula
+            if number != 1:
+                ##had some problems here but now its just like if the binary number is zero the output is automatically 0
+                print(" not 1")
+                out = 0
+                binary.numlist.append(out)
+                print(binary.numlist)
+            if number == 1:
+                ##does the formula again 
+                out = (2 ** bintime)
+                print(out)
+                numreal = number * out
+                ##end
+                print(number*out)
+                print(str(number) + '* (2 **' + str(bintime) + ')')## for debugging it was sayin that eg 0 * 32 is 32
+                binary.numlist.append(numreal)
+                print('out' + str(numreal))
+                print('list'+ str(binary.numlist))
+class binaryadd():
+    def ition(num1, num2):
+        a = binary.conv(num1)
+        b = binary.conv(num2)
+        return a + b
+#still doesnt really like numbers that arent 1 or 0 but i mean as long as you dont put em in its good                
+print('Leo FostErs binary   ---  decimal converter1$$&^&*^%$%$^%^$ ayy tested up to 5000 digits! (2⁵⁰⁰⁰)thats 1111111111111... u get the idea')
+user = int(input('type in a binary number'))
+if user == 0:
+    print(0)
+    print('give me a harder one cmon try 1 but type that 2000 times')
+else:
+    binary.conv(user)
+    print(str(user) + '   in decimal eeeeesssss:')
+
+    print(sum(binary.numlist))
+    print(str(len(str(user)))+ 'len of the binary nuber you converted')
+    print('press enter to exit')
+    input()
+    exit()
+
